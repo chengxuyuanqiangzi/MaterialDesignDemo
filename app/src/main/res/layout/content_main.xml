@@ -9,18 +9,27 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.materialdesigndemo.MainActivity"
-    tools:showIn="@layout/app_bar_main">
+    tools:showIn="@layout/refresh_layout">
 
 
-
-    <RelativeLayout
+    <com.refresh.MaterialRefreshLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@drawable/selector">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ffsagagagad"/>
-    </RelativeLayout>
+        android:layout_height="match_parent"
+        android:id="@+id/refresh"
+        app:overlay="false"
+        app:wave_show="true"
+        app:wave_color="#aaaaaa"
+        app:wave_height_type="higher"
+        app:progress_show_arrow="true"
+        app:refresh_progress_text_color="#ff0000"
+        app:isLoadMore="true"
+        >
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/recycleview"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </com.refresh.MaterialRefreshLayout>
 </RelativeLayout>

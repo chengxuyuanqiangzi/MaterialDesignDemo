@@ -1,5 +1,6 @@
 package com.example.materialdesigndemo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
@@ -45,5 +46,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         GlobalLog.d(TAG,"test------------");
+    }
+
+    public void launcherActivity(Class cs){
+        startActivity(new Intent(this,cs));
     }
 }

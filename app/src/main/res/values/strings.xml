@@ -5,4 +5,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="linear_layout">LinearLayoutManager</string>
+    <string name="grid_layout">GridLayoutManager</string>
+    <string name="staggere_grid_layout">staggeredGridLayout</string>
 </resources>
