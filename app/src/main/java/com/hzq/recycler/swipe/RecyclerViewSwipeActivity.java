@@ -1,4 +1,4 @@
-package com.example.materialdesigndemo.swipe_recycleview;
+package com.hzq.recycler.swipe;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,12 +7,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SimpleItemAnimator;
 import android.view.View;
+
 import com.example.materialdesigndemo.BaseActivity;
 import com.example.materialdesigndemo.R;
 import com.h6ah4i.android.widget.advrecyclerview.draggable.RecyclerViewDragDropManager;
 import com.h6ah4i.android.widget.advrecyclerview.swipeable.RecyclerViewSwipeManager;
 import com.h6ah4i.android.widget.advrecyclerview.touchguard.RecyclerViewTouchActionGuardManager;
 import com.h6ah4i.android.widget.advrecyclerview.utils.WrapperAdapterUtils;
+import com.hzq.recycler.DividerLineItemDecoration;
 
 /**
  * Created by hezhiqiang on 16/7/1.
@@ -101,7 +103,7 @@ public class RecyclerViewSwipeActivity  extends BaseActivity {
         if (animator1 instanceof SimpleItemAnimator) {
             ((SimpleItemAnimator) animator1).setSupportsChangeAnimations(false);
         }
-
+        recycleView.addItemDecoration(new DividerLineItemDecoration(this,DividerLineItemDecoration.VERTICAL_LIST));
         recycleView.setAdapter(mWrappedAdapter);  // requires *wrapped* adapter
 //        recycleView.setItemAnimator(animator);
         mRecyclerViewTouchActionGuardManager.attachRecyclerView(recycleView);

@@ -12,7 +12,7 @@
     tools:showIn="@layout/refresh_layout">
 
 
-    <com.refresh.MaterialRefreshLayout
+    <!--<com.hzq.metrialdesignrefresh.MaterialRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/refresh"
@@ -31,5 +31,5 @@
 
         </android.support.v7.widget.RecyclerView>
 
-    </com.refresh.MaterialRefreshLayout>
+    </com.hzq.metrialdesignrefresh.MaterialRefreshLayout>-->
 </RelativeLayout>

@@ -14,6 +14,7 @@ import android.view.View;
 public abstract class BaseActivity extends AppCompatActivity {
     public Toolbar toolbar;
     public static final String TAG = "BaseActivity";
+    public static final String EXTRA_TITLE = "title_extra";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

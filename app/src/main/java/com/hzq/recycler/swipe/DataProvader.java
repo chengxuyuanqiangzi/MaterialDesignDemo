@@ -1,4 +1,4 @@
-package com.example.materialdesigndemo.swipe_recycleview;
+package com.hzq.recycler.swipe;
 
 import com.h6ah4i.android.widget.advrecyclerview.swipeable.RecyclerViewSwipeManager;
 

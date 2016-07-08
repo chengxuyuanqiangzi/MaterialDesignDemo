@@ -19,18 +19,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.materialdesigndemo.swipe_recycleview.RecyclerViewSwipeActivity"
+            android:name="com.hzq.recycler.swipe.RecyclerViewSwipeActivity"
             android:label="SwipeLayout"/>
 
         <activity
-            android:name="com.example.materialdesigndemo.swipe_recycleview.BtnRecyclerViewSwipeActivity"
+            android:name="com.hzq.recycler.swipe.RecyclerViewSwipeBtnActivity"
             android:label="BtnSwipeLayout"/>
 
         <activity
-            android:name="com.hzq.recycler.RecycleActivity"
+            android:name="com.hzq.recycler.RecyclerViewActivity"
             android:label="RecycleView" />
 
-        <activity android:name="com.hzq.recycler.ItemAnimatorRecyclerActivity"/>
+        <activity android:name="com.hzq.recycler.RecyclerItemAnimatorActivity"/>
     </application>
 
 </manifest>
