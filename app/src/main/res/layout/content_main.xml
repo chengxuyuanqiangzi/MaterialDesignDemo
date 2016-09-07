@@ -12,13 +12,13 @@
     tools:showIn="@layout/refresh_layout">
 
 
-    <!--<com.hzq.metrialdesignrefresh.MaterialRefreshLayout
+    <com.hzq.metrialdesignrefresh.MaterialRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/refresh"
         app:overlay="false"
         app:wave_show="true"
-        app:wave_color="#aaaaaa"
+        app:wave_color="#fff433"
         app:wave_height_type="higher"
         app:progress_show_arrow="true"
         app:refresh_progress_text_color="#ff0000"
@@ -31,5 +31,7 @@
 
         </android.support.v7.widget.RecyclerView>
 
-    </com.hzq.metrialdesignrefresh.MaterialRefreshLayout>-->
+    </com.hzq.metrialdesignrefresh.MaterialRefreshLayout>
+
+
 </RelativeLayout>

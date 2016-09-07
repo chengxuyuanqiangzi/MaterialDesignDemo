@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.materialdesigndemo">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,26 +13,63 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name="com.hzq.recycler.swipe.RecyclerViewSwipeActivity"
+            android:name=".CustomDeepLinkHandler"
+            android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="hzq" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.hzq.recycler.swipe.RecyclerViewSwipeActivity" android:screenOrientation="portrait"
             android:label="SwipeLayout"/>
 
         <activity
-            android:name="com.hzq.recycler.swipe.RecyclerViewSwipeBtnActivity"
+            android:name="com.hzq.recycler.swipe.RecyclerViewSwipeBtnActivity" android:screenOrientation="portrait"
             android:label="BtnSwipeLayout"/>
 
         <activity
-            android:name="com.hzq.recycler.RecyclerViewActivity"
+            android:name="com.hzq.recycler.RecyclerViewActivity" android:screenOrientation="portrait"
             android:label="RecycleView" />
 
-        <activity android:name="com.hzq.recycler.RecyclerItemAnimatorActivity"/>
+        <activity android:name="com.hzq.recycler.RecyclerItemAnimatorActivity" android:screenOrientation="portrait"/>
+
+        <activity android:name="com.hzq.recycler.RefreshLayoutDemoActivity" android:screenOrientation="portrait" />
+
+        <activity android:name="com.hzq.recycler.itemtouchhelper.ItemTouchHelperActivity" android:screenOrientation="portrait" />
+
+        <activity android:name="com.hzq.widgets.WidgetsDemoActivity" android:screenOrientation="portrait" />
+
+        <activity android:name="com.hzq.widgets.FresciDemoActivity" android:screenOrientation="portrait" />
+
+        <activity android:name="com.hzq.pullzoomview.PullZoomViewDemoActivity"
+            android:screenOrientation="portrait"
+            android:label="PullZoomView"/>
+        <activity android:name="com.hzq.pullzoomview.PullRecycleViewActivity" android:screenOrientation="portrait"
+            android:label="PullRecycleView" />
+
+        <activity android:name="com.hzq.widgets.ViewPagerActivity" android:screenOrientation="portrait" />
+
+        <activity android:name="com.hzq.espresso.EspressoDemo" android:screenOrientation="portrait"/>
+
+        <activity android:name="com.hzq.espresso.TestActivity" android:screenOrientation="portrait"/>
+
+        <activity android:name="com.hzq.espresso.HierarchyActivity" android:screenOrientation="portrait" />
+
+        <activity android:name="com.hzq.espresso.ListViewActivity" android:screenOrientation="portrait" />
+
+        <activity android:name="com.hzq.widgets.CircleProgressBarActivity" android:screenOrientation="portrait" />
     </application>
 
 </manifest>

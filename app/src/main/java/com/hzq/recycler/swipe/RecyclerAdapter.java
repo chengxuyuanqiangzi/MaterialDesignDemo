@@ -16,6 +16,7 @@ import com.h6ah4i.android.widget.advrecyclerview.draggable.ItemDraggableRange;
 import com.h6ah4i.android.widget.advrecyclerview.draggable.RecyclerViewDragDropManager;
 import com.h6ah4i.android.widget.advrecyclerview.swipeable.RecyclerViewSwipeManager;
 import com.h6ah4i.android.widget.advrecyclerview.swipeable.SwipeableItemAdapter;
+import com.h6ah4i.android.widget.advrecyclerview.swipeable.action.SwipeResultAction;
 import com.h6ah4i.android.widget.advrecyclerview.utils.AbstractDraggableSwipeableItemViewHolder;
 import com.h6ah4i.android.widget.advrecyclerview.utils.RecyclerViewAdapterUtils;
 
@@ -134,6 +135,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
         holder.itemView.setBackgroundResource(bgRes);
     }
+    /*
 
     @Override
     public int onSwipeItem(MyViewHolder holder, int position, int result) {
@@ -181,7 +183,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
         else {
                 item.setPinnedToSwipeLeft(false);
         }
-    }
+    }*/
 
     public EventListener getEventListener() {
         return mEventListener;
@@ -213,6 +215,72 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
         if(fromPosition == toPosition) return;
         mProvider.moveItem(fromPosition,toPosition);
         notifyItemMoved(fromPosition,toPosition);
+    }
+
+    @Override
+    public SwipeResultAction onSwipeItem(MyViewHolder holder, final int position, int result) {
+        int reaction = 0;
+        switch (result) {
+            // swipe right
+            case RecyclerViewSwipeManager.RESULT_SWIPED_RIGHT:
+                if (mProvider.getItem(position).isPinnedToSwipeLeft()) {
+                    // pinned --- back to default position
+                    reaction = RecyclerViewSwipeManager.AFTER_SWIPE_REACTION_DEFAULT;
+                } else {
+                    // not pinned --- remove
+                    reaction =  RecyclerViewSwipeManager.AFTER_SWIPE_REACTION_REMOVE_ITEM;
+                }
+                // not pinned --- remove
+                // swipe left -- pin
+                break;
+            case RecyclerViewSwipeManager.RESULT_SWIPED_LEFT:
+                reaction =  RecyclerViewSwipeManager.AFTER_SWIPE_REACTION_MOVE_TO_SWIPED_DIRECTION;
+                break;
+            // other --- do nothing
+            case RecyclerViewSwipeManager.RESULT_CANCELED:
+            default:
+                reaction =  RecyclerViewSwipeManager.AFTER_SWIPE_REACTION_DEFAULT;
+                break;
+        }
+        return new CustomSwipeResultAction(reaction,position);
+    }
+
+    class CustomSwipeResultAction extends SwipeResultAction{
+
+        private int position;
+        protected CustomSwipeResultAction(int resultAction) {
+            super(resultAction);
+        }
+
+        protected CustomSwipeResultAction(int resultAction,int position){
+            this(resultAction);
+            this.position = position;
+        }
+
+        @Override
+        protected void onPerformAction() {
+            AbstractDataProvider.Data item = mProvider.getItem(position);
+
+            if (getResultActionType() == RecyclerViewSwipeManager.AFTER_SWIPE_REACTION_REMOVE_ITEM) {
+                mProvider.removeItem(position);
+                notifyItemRemoved(position);
+
+                if (mEventListener != null) {
+                    mEventListener.onItemRemoved(position);
+                }
+            }
+            else if (getResultActionType() == RecyclerViewSwipeManager.AFTER_SWIPE_REACTION_MOVE_TO_SWIPED_DIRECTION) {
+                item.setPinnedToSwipeLeft(true);
+                notifyItemChanged(position);
+
+                if (mEventListener != null) {
+                    mEventListener.onItemPinned(position);
+                }
+            }
+            else {
+                item.setPinnedToSwipeLeft(false);
+            }
+        }
     }
 
     public static class MyViewHolder extends AbstractDraggableSwipeableItemViewHolder {

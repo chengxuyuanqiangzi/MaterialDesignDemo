@@ -6,10 +6,28 @@
             android:id="@+id/recyclerview"
             android:icon="@drawable/ic_menu_camera"
             android:title="recyclerview" />
+
+        <item
+            android:id="@+id/pull_zoom"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="PullZoomView" />
+
+        <item
+            android:id="@+id/widgets"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Widgets" />
+        <item
+            android:id="@+id/liberary"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Liberary" />
         <item
             android:id="@+id/animations"
             android:icon="@drawable/ic_menu_camera"
             android:title="Animations" />
+        <item
+            android:id="@+id/espresso"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="espresso" />
     </group>
 
 

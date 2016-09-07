@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/title_bar" />
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/test_fragment_example_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:hint="@string/example_text_hint"
+                android:text="@string/example_text_before"
+                android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+            <Button
+                android:id="@+id/change_text_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/test_fragment_example_text"
+                android:layout_centerHorizontal="true"
+                android:text="@string/example_text_button"/>
+
+            <EditText
+                android:id="@+id/test_fragment_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/change_text_button"
+                android:layout_marginTop="@dimen/activity_vertical_margin"/>
+
+            <TextView
+                android:id="@+id/test_fragment_content_description_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/test_fragment_edittext"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/example_content_description"
+                android:text="@string/example_content_description"
+                android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+            <Button
+                android:id="@+id/offscreen_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/test_fragment_content_description_text"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="700dp"
+                android:text="@string/offscreen_button"/>
+
+            <CheckBox
+                android:id="@+id/enabled_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/test_fragment_content_description_text"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="64dp"
+                android:text="@string/checkbox_string"/>
+
+            <CheckBox
+                android:id="@+id/disabled_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/enabled_checkbox"
+                android:layout_centerHorizontal="true"
+                android:enabled="false"
+                android:text="@string/checkbox_string_disabled"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</LinearLayout>

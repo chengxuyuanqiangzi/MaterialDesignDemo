@@ -8,4 +8,31 @@
     <string name="linear_layout">LinearLayoutManager</string>
     <string name="grid_layout">GridLayoutManager</string>
     <string name="staggere_grid_layout">staggeredGridLayout</string>
+
+    <string name="example_text_hint">This is an example hint.</string>
+    <string name="example_text_before">This is an example text.</string>
+    <string name="example_text_after">This is an example text after.</string>
+    <string name="example_text_button">Change Text</string>
+    <string name="example_switch_label">Example Switch</string>
+
+    <string name="example_text_fragment">Example</string>
+
+    <string name="example_pager_text">Example</string>
+
+
+    <string name="example_content_description">Example Content Description Dest</string>
+
+    <string name="offscreen_button">Offscreen Button</string>
+
+    <string name="left_text">Left</string>
+    <string name="right_text">Right</string>
+
+    <string name="top_text">Top</string>
+    <string name="bottom_text">Bottom</string>
+
+    <string name="hierarchy_text">Hierarchy Text</string>
+    <string name="checkbox_string">Enabled CheckBox</string>
+    <string name="checkbox_string_disabled">Disabled CheckBox</string>
+
+    <string name="row_label">Clicked on row</string>
 </resources>

@@ -8,4 +8,9 @@
     <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="list_item_translation_z">2dp</dimen>
+
+    <dimen name="list_activity_click_header_height">24dp</dimen>
+    <dimen name="selection_row_value_margin">12dp</dimen>
+    <dimen name="list_item_min_height">56dp</dimen>
+    <dimen name="list_item_padding">16dp</dimen>
 </resources>

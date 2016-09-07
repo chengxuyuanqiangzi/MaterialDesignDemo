@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import butterknife.ButterKnife;
+
 /**
  * Created by hezhiqiang on 16/6/27.
  */
@@ -20,7 +22,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(initLayoutId());
+        ButterKnife.inject(this);
         initToolbar();
+        initPageView();
     }
 
     public abstract int initLayoutId();
@@ -42,6 +46,8 @@ public abstract class BaseActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
     }
+
+    public void initPageView(){};
 
     @Override
     public void onBackPressed() {

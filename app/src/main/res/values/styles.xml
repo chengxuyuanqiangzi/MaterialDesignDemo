@@ -20,4 +20,14 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="commonListItemStyle"/>
+
+    <style name="SwitchCompatStyle" parent="AppTheme">
+        <!--<item name="colorAccent">@color/material_green</item>-->
+         <!--Active thumb color & Active track color(30% transparency) switch 打开时的拇指按钮的颜色 轨迹颜色默认为30%这个颜色 -->
+        <item name="colorControlActivated">@color/switch_check_color</item>
+        <!-- Inactive thumb color switch关闭时的拇指按钮的颜色 -->
+        <item name="colorSwitchThumbNormal">@color/material_green</item>
+        <!-- Inactive track color(30% transparency) switch关闭时的轨迹的颜色  30%这个颜色 -->
+        <item name="android:colorForeground">@color/material_red</item>
+    </style>
 </resources>

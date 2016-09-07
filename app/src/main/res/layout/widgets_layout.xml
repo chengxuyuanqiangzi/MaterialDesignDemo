@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/title_bar" />
+
+    <TextView
+        android:id="@+id/txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <SeekBar
+        android:id="@+id/seekBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="200"
+        android:progressBackgroundTint="#ff0000"
+        android:progressTint="#00ff55"
+        android:thumbTint="#4433aa"
+        android:splitTrack="true"
+        android:layout_margin="20dp"/>
+
+    <android.support.v7.widget.SwitchCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:showText="false"
+        app:switchMinWidth="100dp"
+        android:layout_margin="20dp"
+        app:theme="@style/SwitchCompatStyle"/>
+</LinearLayout>

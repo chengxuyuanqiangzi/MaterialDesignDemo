@@ -120,7 +120,7 @@ public class RecyclerViewSwipeBtnActivity extends BaseActivity {
      */
     private void onDeleteBtnClick(View v){
         int position = recycleView.getChildPosition(v);
-        Snackbar.make(recycleView,"position="+position,Snackbar.LENGTH_SHORT).show();
+        Snackbar.make(recycleView,"position="+position,Snackbar.LENGTH_LONG).show();
         provader.removeItem(position);
         mWrappedAdapter.notifyItemRemoved(position);
         recycleView.scrollToPosition(position);

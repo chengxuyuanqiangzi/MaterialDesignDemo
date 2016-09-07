@@ -27,6 +27,7 @@
 
     <color name="snackbar_action_color_done">#ffccccff</color>
 
+    <color name="switch_check_color">#80CBC4</color>
     <integer-array name="material_colors">
         <item>@color/material_green</item>
         <item>@color/material_blue</item>

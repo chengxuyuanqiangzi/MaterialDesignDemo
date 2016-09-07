@@ -9,6 +9,7 @@ import android.support.v7.widget.SimpleItemAnimator;
 import android.view.View;
 
 import com.example.materialdesigndemo.BaseActivity;
+import com.example.materialdesigndemo.GlobalLog;
 import com.example.materialdesigndemo.R;
 import com.h6ah4i.android.widget.advrecyclerview.draggable.RecyclerViewDragDropManager;
 import com.h6ah4i.android.widget.advrecyclerview.swipeable.RecyclerViewSwipeManager;
@@ -42,6 +43,7 @@ public class RecyclerViewSwipeActivity  extends BaseActivity {
         init();
     }
 
+    private String oldtxt;
     private void init(){
         mRecyclerViewTouchActionGuardManager = new RecyclerViewTouchActionGuardManager();
         mRecyclerViewTouchActionGuardManager.setInterceptVerticalScrollingWhileAnimationRunning(true);
@@ -54,12 +56,8 @@ public class RecyclerViewSwipeActivity  extends BaseActivity {
         final RecyclerAdapter myItemAdapter = new RecyclerAdapter(this,provader);
         myItemAdapter.setEventListener(new RecyclerAdapter.EventListener() {
             @Override
-            public void onItemRemoved(int position) {
-                Snackbar snackbar = Snackbar.make(
-                        findViewById(R.id.container),
-                        "test",
-                        Snackbar.LENGTH_LONG);
-
+            public void onItemRemoved(final int position) {
+                Snackbar snackbar = Snackbar.make(findViewById(R.id.container),provader.getItem(position).getText(),Snackbar.LENGTH_LONG);
                 snackbar.setAction("撤消", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -71,6 +69,17 @@ public class RecyclerViewSwipeActivity  extends BaseActivity {
                     }
                 });
                 snackbar.setActionTextColor(getResources().getColor(R.color.snackbar_action_color_done));
+                snackbar.setCallback(new Snackbar.Callback() {
+                    @Override
+                    public void onDismissed(Snackbar snackbar, int event) {
+                        GlobalLog.d("xx","oldtxt="+oldtxt);
+                    }
+
+                    @Override
+                    public void onShown(Snackbar snackbar) {
+                        oldtxt = provader.getItem(position).getText();
+                    }
+                });
                 snackbar.show();
             }
 

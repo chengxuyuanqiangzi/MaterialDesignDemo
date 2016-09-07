@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.example.materialdesigndemo.R;
 import com.h6ah4i.android.widget.advrecyclerview.swipeable.RecyclerViewSwipeManager;
 import com.h6ah4i.android.widget.advrecyclerview.swipeable.SwipeableItemAdapter;
+import com.h6ah4i.android.widget.advrecyclerview.swipeable.action.SwipeResultAction;
 import com.h6ah4i.android.widget.advrecyclerview.utils.AbstractSwipeableItemViewHolder;
 import com.h6ah4i.android.widget.advrecyclerview.utils.RecyclerViewAdapterUtils;
 import com.hzq.metrialdesignrefresh.Util;
@@ -110,7 +111,7 @@ public class BtnRecyclerAdapter extends RecyclerView.Adapter<BtnRecyclerAdapter.
         holder.itemView.setBackgroundResource(bgRes);
     }
 
-    @Override
+    /*@Override
     public int onSwipeItem(MyViewHolder holder, int position, int result) {
         switch (result) {
             // swipe right
@@ -149,7 +150,7 @@ public class BtnRecyclerAdapter extends RecyclerView.Adapter<BtnRecyclerAdapter.
         else {
                 item.setPinnedToSwipeLeft(false);
         }
-    }
+    }*/
 
     public EventListener getEventListener() {
         return mEventListener;
@@ -157,6 +158,11 @@ public class BtnRecyclerAdapter extends RecyclerView.Adapter<BtnRecyclerAdapter.
 
     public void setEventListener(EventListener eventListener) {
         mEventListener = eventListener;
+    }
+
+    @Override
+    public SwipeResultAction onSwipeItem(MyViewHolder holder, int position, int result) {
+        return null;
     }
 
     public static class MyViewHolder extends AbstractSwipeableItemViewHolder {

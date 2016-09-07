@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/title_bar"
+        android:id="@+id/include" />
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/my_image_view"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        app:placeholderImage="@mipmap/cheese_1"
+        app:viewAspectRatio="1.33"
+
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/include"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="33dp"
+        android:layout_marginStart="33dp" />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/my_image_view1"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        app:placeholderImage="@mipmap/cheese_1"
+        app:viewAspectRatio="1.33"
+        android:layout_alignTop="@+id/my_image_view"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="70dp"
+        android:layout_marginEnd="70dp" />
+
+    <!--app:fadeDuration="300" 淡入淡出时间 -->
+    <!--app:actualImageScaleType="fitXY" 缩放类型 -->
+    <!--app:placeholderImage="@mipmap/cheese_4" 占位图 -->
+    <!--app:failureImage="@mipmap/cheese_2" 加载失败展示图 -->
+    <!--app:retryImage="@mipmap/cheese_3" 重试图 -->
+    <!--app:progressBarAutoRotateInterval="1000" 自动旋转时间间隔 -->
+    <!--app:roundAsCircle="true" 圆形图片 -->
+    <!--app:roundedCornerRadius="10dp" 圆角 -->
+    <!--app:roundWithOverlayColor="@color/material_green" 图片上层的覆盖层,可用来解决加载失败时图片无法展示圆角的问题
+     圆角图片只支持 占位图圆角和加载显示的图片圆角效果,加载失败和重新加载图片暂时没有支持圆角效果
+     -->
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/my_image_view2"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:fadeDuration="300"
+        app:actualImageScaleType="centerCrop"
+        app:placeholderImage="@mipmap/cheese_1"
+        app:placeholderImageScaleType="centerCrop"
+        app:failureImage="@mipmap/cheese_2"
+        app:failureImageScaleType="centerCrop"
+        app:retryImage="@mipmap/cheese_3"
+        app:progressBarImage="@mipmap/cheese_4"
+        app:progressBarAutoRotateInterval="500"
+        app:roundAsCircle="false"
+        app:roundedCornerRadius="40dp"
+        app:roundBottomLeft="true"
+        app:roundBottomRight="false"
+        app:roundTopLeft="false"
+        app:roundTopRight="true"
+        app:roundingBorderWidth="0dp"
+        app:roundingBorderColor="@color/material_yellow"
+        app:viewAspectRatio="1.33"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/my_image_view1"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
